@@ -11,7 +11,7 @@
 
                         <div class="item py-2 bg-light">
                             <div class="product font-rale">
-                                <a href="#"><img src="<?=$item['item_image'] ?? "./assets/products/1.png";?>" class="img-fluid" alt="product 1"></a>
+                                <a href="<?php printf('%s?item_id=%s', 'product.php',  $item['item_id']); ?>"><img src="<?=$item['item_image'] ?? "./assets/products/1.png";?>" class="img-fluid" alt="product 1"></a>
                                 <div class="text-center">
                                     <h6><?=$item['item_name'] ?? "Unknown";?></h6>
                                     <div class="rating text-warning font-size-12">
