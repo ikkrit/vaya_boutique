@@ -2,7 +2,7 @@
 
 <!------- PRODUCT ------>
 
-<?php include_once 'template/_products.php' ?>
+<?php include_once 'template/_cart-template.php' ?>
 
 <!------ NEW PHONE ------>
 

@@ -3,6 +3,12 @@
     $unique = array_unique($brand);
     sort($unique);
     shuffle($product_shuffle);
+
+    if($_SERVER['REQUEST_METHOD'] == "POST") {
+        if(isset($_POST['special_sale_submit'])) {
+            $cart->addToCart($_POST['user_id'],$_POST['item_id']);
+        }
+    }
 ?>
 
 
@@ -34,7 +40,11 @@
                                     <div class="price py-2">
                                         <span><?=$item['item_price'] ?? 0;?>€</span>
                                     </div>
-                                    <button type="submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                                        <form method="post">
+                                            <input type="hidden" name="item_id" value="<?=$item['item_id'] ?? '1';?>">
+                                            <input type="hidden" name="user_id" value="<?=1;?>">
+                                            <button type="submit" name="special_price_submit" class="btn btn-warning font-size-12">Add to Cart</button>
+                                        </form>
                                 </div>
                             </div>
                         </div>

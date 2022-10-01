@@ -31,6 +31,11 @@ class Cart
                 "user_id" => $userid,
                 "item_id" => $itemid
             );
+
+            $result = $this->insertIntoCart($params);
+            if($result) {
+                header("Location:".$_SERVER['PHP_SELF']);
+            }
         }
     }
 
